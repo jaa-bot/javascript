@@ -75,17 +75,15 @@ const DEFAULT_OPERARTOR_ERROR = "Operator invalid";
  * En cualquier otro caso debe devolver DEFAULT_OPERARTOR_ERROR
  */
 export const simpleCalculatorSC = (operator, num_1, num_2) => {
-  switch (
-    operator
-  ) {
+  switch (operator) {
     case "+":
-      return num1 + num2;
+      return num_1 + num_2;
     case "-":
-      return num1 - num2;
+      return num_1 - num_2;
     case "*":
-      return num1 * num2;
+      return num_1 * num_2;
     case "/":
-      return num1 / num2;
+      return num_1 / num_2;
     default:
       return DEFAULT_OPERARTOR_ERROR;
   }
@@ -96,10 +94,10 @@ export const simpleCalculatorSC = (operator, num_1, num_2) => {
  * Cada propieda del objeto debe realizar la operación correspodiente
  */
 let calculatorObject = {
-  "+": (num1, num2) => num1 + num2,
-  "-": (num1, num2) => num1 - num2,
-  "*": (num1, num2) => num1 * num2,
-  "/": (num1, num2) => num1 / num2,
+  "+": (num_1, num_2) => num_1 + num_2,
+  "-": (num_1, num_2) => num_1 - num_2,
+  "*": (num_1, num_2) => num_1 * num_2,
+  "/": (num_1, num_2) => num_1 / num_2,
 };
 
 /**
@@ -107,8 +105,8 @@ let calculatorObject = {
  * si se introduce cualquier cosa que sea diferente a "+", "-", "*", "/"
  *
  */
-export const simpleCalculatorObject = (operartor, num_1, num_2) => {
+export const simpleCalculatorObject = (operator, num_1, num_2) => {
   return calculatorObject[operator]
-    ? calculatorObject[operator](num1, num2)
+    ? calculatorObject[operator](num_1, num_2)
     : DEFAULT_OPERARTOR_ERROR;
 };
