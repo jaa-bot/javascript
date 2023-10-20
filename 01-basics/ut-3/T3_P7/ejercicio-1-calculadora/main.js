@@ -2,6 +2,7 @@ const screen = document.getElementById('screen');
 const buttons = document.getElementById('buttons');
 
 buttons.addEventListener('click', (e) => {
+    e.preventDefault();
     const key = e.target.getAttribute('data-key');
     if (key === 'clear') {
         screen.textContent = '';
